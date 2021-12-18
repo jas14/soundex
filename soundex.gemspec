@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Calculate Soundex codes from strings'
   # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.5.7')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.5')
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
