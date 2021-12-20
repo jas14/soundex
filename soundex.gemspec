@@ -9,14 +9,15 @@ Gem::Specification.new do |spec|
   spec.email         = ['569991+jas14@users.noreply.github.com']
 
   spec.summary       = 'Calculate Soundex codes from strings'
-  # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = 'https://github.com/jas14/soundex'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.7.5')
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
-  # spec.metadata["homepage_uri"] = spec.homepage
-  # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = 'https://github.com/jas14/soundex'
+  spec.metadata['rubygems_mfa_required'] = 'true'
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
@@ -28,6 +29,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'minitest', '~> 5.0'
+  spec.add_dependency 'rake', '~> 12.0'
   spec.add_dependency 'zeitwerk'
 
   spec.add_development_dependency 'rubocop'
