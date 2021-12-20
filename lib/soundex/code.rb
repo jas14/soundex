@@ -18,7 +18,9 @@ module Soundex
 
     def self.from(str)
       # Discard all non-letter characters.
-      str = str.gsub(/[^a-z]/i, '')
+      str = str.gsub(/[^a-z]/i, '').upcase
+
+      raise ArgumentError, 'String must include more than one letter' if str.empty?
 
       # Encode each letter as a digit.
       digit_string = str.chars.inject('') do |acc, char|
@@ -30,7 +32,7 @@ module Soundex
 
       # Replace first digit with first letter of original string.
       # Remove all zeroes.
-      prefixed = "#{str[0].upcase}#{coalesced[1..]}".gsub('0', '')
+      prefixed = "#{str[0]}#{coalesced[1..]}".gsub('0', '')
 
       # Pad with zeroes or truncate to get exactly 4 characters.
       prefixed.ljust(4, '0')[..3]
